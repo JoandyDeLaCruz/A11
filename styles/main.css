@@ -1,6 +1,7 @@
+```css
 /* custom property */
 :root {
-	--accent-color: #800000;  /* could also be coded #800 */
+	--accent-color: #800000;
 	--gradient-color: #f6bb73;
 
 	--light_menu: white;
@@ -18,176 +19,175 @@
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(15px + .2vw);
+	font-size: calc(15px + .2vw);
 	width: min(80%, 1024px);
 	line-height: 1.5;
 	margin: auto;
 	border: 2px solid var(--accent-color);
 }
+
 h1, h2, h3, p, ul {
 	padding: .25em 0;
 }
-a:hover, a:focus{
+
+h1 { font-size: 150%; }
+h2 { font-size: 130%; color: var(--accent-color); }
+h3 { font-size: 105%; }
+
+ul { margin-left: 2em; }
+
+a:hover, a:focus {
 	font-style: italic;
 	color: var(--accent-color);
 }
-h1 {
-	font-size: 150%;
-}
-h2 {
-	font-size: 130%;
-	color: var(--accent-color);
-}
-h3 {
-	font-size: 105%;
-}
-ul {
-	margin-left: 2em;
-}
+
 img {
 	max-width: 100%;
 	height: auto;
 }
 
-/* the styles for the header */
+/* HEADER */
 header {
 	text-align: center;
 	line-height: 1.2;
 	border-bottom: 2px solid var(--accent-color);
 	background-image: linear-gradient(
-	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
-	& h2 {
-		font-size: 175%;
-		padding-top: .5em;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-		padding-bottom: 1em;
-	}
-	& img {
-		display: none; /* hidden on mobile *
-	}
+		30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
 }
 
-/* the styles for the main content */
+header h2 {
+	font-size: 175%;
+	padding-top: .5em;
+}
+
+header h3 {
+	font-size: 130%;
+	font-style: italic;
+	padding-bottom: 1em;
+}
+
+header img {
+	display: none;
+}
+
+/* MAIN */
 main {
 	display: flex;
-	flex-direction: column-reverse; 
+	flex-direction: column-reverse;
 	padding: 0 1em 1em;
-	& blockquote {
-		font-style: italic;
-		padding-left: 1em;
-	}
-	& h3 + img { /* speaker images */
-		width: clamp(40px, 50%, 75px);
-		border: 4px double var(--accent-color);
-		border-radius: 10px;
-	}
 }
 
-/* the styles for the section */
+main blockquote {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+main h3 + img {
+	width: clamp(40px, 50%, 75px);
+	border: 4px double var(--accent-color);
+	border-radius: 10px;
+}
+
+/* SECTION */
 section {
 	padding-left: .5em;
 	border-bottom: 2px solid var(--accent-color);
-	& img {
-		width: clamp(100px, 50%, 250px);
-		float: right;
-		margin: 0 1em .25em;
-	}
 }
 
-/* the styles for the aside */
+section img {
+	width: clamp(100px, 50%, 250px);
+	float: right;
+	margin: 0 1em .25em;
+}
+
+/* ASIDE */
 aside {
 	padding-right: .5em;
 }
 
-/* the styles for the footer */
+/* FOOTER */
 footer {
 	background-color: var(--accent-color);
-	& p {
-		text-align: center;
-		color: white;
-		padding: 1em 0;
-	}
 }
 
-/* CSS class */
+footer p {
+	text-align: center;
+	color: white;
+	padding: 1em 0;
+}
+
+/* CLASSES */
 .featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
 	padding: .5em 0 1em;
 }
-.speaker {
-	& h1 {
-		color: var(--accent-color);
-	}
-	& h2 {
-		color: black;
-	}
-	& p {
-		padding: .5em 0; 
-	}	
-}
+
 .large {
 	font-size: 125%;
 }
 
-/* styles for the menu */
-.navbar { position: relative;
-		 background-color: var(--accent-color);
-		 clear: left; 
-		} 
+/* NAVBAR */
+.navbar {
+	position: relative;
+	background-color: var(--accent-color);
+	clear: left;
+}
+
 .navbar ul {
 	list-style-type: none;
 	margin: 0;
-	padding: 0; }
+	padding: 0;
+}
 
-/* hamburger button */
-.menu-btn { display: block;
-		   font-size: 24px;
-		   padding: 1em;
-		   color: white;
-		   cursor: pointer;
+/* hamburger */
+.menu-btn {
+	display: block;
+	font-size: 24px;
+	padding: 1em;
+	color: white;
+	cursor: pointer;
 }
 
 /* hide checkbox */
-#menu-toggle{
+#menu-toggle {
 	display: none;
 }
 
-/*mobile menu */
-.menu{
+/* mobile menu */
+.menu {
 	position: absolute;
 	left: 0;
 	width: 40%;
 	background-color: var(--accent-color);
 	display: none;
-
-	& li {
-		text-align: left;
-	}
 }
 
-.navbar a { display: block;
-		   padding: 1em;
-		   text-decoration: none;
-		   color: var(--light_menu);
-		   margin: 0 2px 2px 0; }
+.menu li {
+	text-align: left;
+}
+
+.navbar a {
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	color: var(--light_menu);
+	margin: 0 2px 2px 0;
 }
 
 .navbar a:hover,
 .navbar a:focus,
 .navbar a.current {
 	background-color: var(--mid_menu);
-	color: var(--dark_menu); 
+	color: var(--dark_menu);
 }
 
-/* show menu when clicked */
-#menu-toggle: checked + .menu-btn + .menu{
+/* show menu */
+#menu-toggle:checked + .menu-btn + .menu {
 	display: block;
 }
 
+/* submenu */
 .submenu {
 	position: relative;
 }
@@ -205,41 +205,49 @@ footer {
 	display: block;
 }
 
+/* MEDIA QUERY */
 @media (min-width: 768px) {
-/* layout */
+
 	main {
 		flex-direction: row;
 	}
+
 	section {
 		flex-basis: 75%;
-		border-bottom: none; 
-	} 
-	aside { flex-basis: 25%; 
-		  }
-/* header */
+		border-bottom: none;
+	}
+
+	aside {
+		flex-basis: 25%;
+	}
+
 	header {
 		text-align: left;
-	} header img {
+	}
+
+	header img {
 		display: block;
 		width: clamp(40px, 15%, 80px);
 		float: left;
 		margin: .75em 1em;
-	} 
-/* menu */
+	}
+
 	.menu-btn {
 		display: none;
 	}
-	.menu { display: flex;
-		   position: relative;
-		   width: 100%; 
-	} 
+
+	.menu {
+		display: flex;
+		position: relative;
+		width: 100%;
+	}
+
 	.menu li {
 		flex-basis: 20%;
 		text-align: center;
-	} 
-/* submenu */
+	}
+
 	.dropdown {
-		position: absolute;
 		left: 0;
 		right: 0;
 		top: auto;
